@@ -1,0 +1,42 @@
+package matriz;
+import java.util.Scanner;
+public class E2 {
+
+	public static void main(String[] args) {
+		Scanner leer = new Scanner (System.in);
+		Matriz LM = new Matriz();
+		
+		 System.out.print("Ingrese el número de filas: ");
+	        int filas = scanner.nextInt();
+
+	        System.out.print("Ingrese el número de columnas: ");
+	        int columnas = scanner.nextInt();
+
+	        int[][] matriz = new int[filas][columnas];
+
+	        // Inicializar la matriz con ceros
+	        for (int fila = 0; fila < filas; fila++) {
+	            for (int columna = 0; columna < columnas; columna++) {
+	                matriz[fila][columna] = 0;
+	            }
+	        }
+
+	        // Llenar la matriz con el patrón deseado
+	        for (int fila = 0; fila < filas; fila++) {
+	            for (int columna = 0; columna < columnas; columna++) {
+	                if (columna == fila || columna == columnas - fila - 1) {
+	                    matriz[fila][columna] = 1;
+	                }
+	            }
+	        }
+
+	        // Mostrar la matriz resultante
+	        for (int fila = 0; fila < filas; fila++) {
+	            for (int columna = 0; columna < columnas; columna++) {
+	                System.out.print(matriz[fila][columna]);
+	            }
+	            System.out.println();
+	        }
+	}
+
+}

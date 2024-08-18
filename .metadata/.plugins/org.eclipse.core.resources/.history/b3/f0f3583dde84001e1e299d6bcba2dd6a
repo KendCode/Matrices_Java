@@ -1,0 +1,37 @@
+package matriz;
+import java.util.Scanner;
+public class Ejer_23 {
+
+	public static void main(String[] args) {
+		Scanner leer = new Scanner (System.in);
+		Matriz LM = new Matriz();
+		Vector LV = new Vector();
+		
+		int N, j, i, T, posi=0; 
+		
+		System.out.print("Ingrese el tamaño de la matriz: ");
+		N = leer.nextInt();
+		int [][] A = new int [N][N];
+		
+		LM.llenarMatriz(A, N, N);
+		LM.mostrarMatriz(A, N, N);
+		
+		T = N* N;
+		int[] V = new int[T];
+		posi = 0;
+		
+		for(i=0; i<N; i++)
+			for(j=0; j<N; j++){
+				V[posi] = A[i][j];
+				posi++;
+				
+			}
+		System.out.println("\n El nuevo Vector es: ");
+		LV.mostrarVector(V, T);
+		LV.burbuja(V, T);
+		System.out.print("\n El vector oredenado es: ");
+		LV.mostrarVector(V, T);
+
+	}
+
+}
